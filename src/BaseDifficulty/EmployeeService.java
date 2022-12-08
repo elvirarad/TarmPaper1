@@ -33,7 +33,7 @@ public Employee findMinSalary(Employee[] employee){
         return employee[j];
     }
 
-    public int findAverageMonthlySalary(Employee[] employee){
+    public int calculationAverageMonthlySalary(Employee[] employee){
         int averageMonthlySalary;
         averageMonthlySalary = findSumSalary(employee) / employee.length;
         return averageMonthlySalary;

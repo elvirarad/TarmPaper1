@@ -24,7 +24,7 @@ public class Main1 {
         System.out.println("Месячная сумма затрат на зар.плату = " + employeeService.findSumSalary(employee) + "руб.");
         System.out.println("Минимальная зар.плата у сотрудника " + employeeService.findMinSalary(employee));
         System.out.println("Максимальная зар.плата у сотрудника " + employeeService.findMaxSalary(employee));
-        System.out.println("Средняя месячная зар.плата = " + employeeService.findAverageMonthlySalary(employee) + "руб.");
+        System.out.println("Средняя месячная зар.плата = " + employeeService.calculationAverageMonthlySalary(employee) + "руб.");
 
         employeeService.printNameEmployee(employee);
     }
