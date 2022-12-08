@@ -26,6 +26,6 @@ public class Main1 {
         System.out.println("Максимальная зар.плата у сотрудника " + employeeService.findMaxSalary(employee));
         System.out.println("Средняя месячная зар.плата = " + employeeService.calculationAverageMonthlySalary(employee) + "руб.");
 
-        employeeService.printNameEmployee(employee);
+        //employeeService.printNameEmployee(employee);
     }
 }
