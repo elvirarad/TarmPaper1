@@ -49,7 +49,7 @@ public class Employee {
     @Override
     public String toString() {
         return "табельный № " + id + " " + surName + " " + name + " " +
-                patronymic + ", отдел- " + department + ", оклад= " + salary + "руб.";
+                patronymic + ", отдел- " + department + ", зар.плата = " + salary + "руб.";
     }
 
 }
