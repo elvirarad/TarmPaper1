@@ -1,13 +1,15 @@
 package BaseDifficulty;
-//import java.util.Objects;
+
+import java.util.Objects;
+
 public class Employee {
     private final int id;
     private static int count = 1;
-    private final String surName;
-    private String name;
-    private String patronymic;
+    private  String surName;
+    private final String name;
+    private final String patronymic;
     private int department;
-    private int salary;
+    private double salary;
 
     public Employee(String surName, String name, String patronymic, int department, int salary) {
         this.surName = surName;
@@ -34,7 +36,7 @@ public class Employee {
         return department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
@@ -42,14 +44,26 @@ public class Employee {
         this.department = department;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
         return "табельный № " + id + " " + surName + " " + name + " " +
-                patronymic + ", отдел- " + department + ", зар.плата = " + salary + "руб.";
+                patronymic + ", отдел- " + department + ", зар.плата = " + salary + " руб.";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return department == employee.department && salary == employee.salary && Objects.equals(surName, employee.surName) && Objects.equals(name, employee.name) && Objects.equals(patronymic, employee.patronymic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(surName, name, patronymic, department, salary);
+    }
 }

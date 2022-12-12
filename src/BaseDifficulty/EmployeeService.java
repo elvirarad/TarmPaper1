@@ -1,18 +1,21 @@
 package BaseDifficulty;
+
+import java.util.Arrays;
+
 public class EmployeeService {
     Employee[] employee = new Employee[10];
 public int findSumSalary(Employee[] employee) {
     int sum = 0;
-    for (int i=0; i < employee.length; i++){
-        if (employee[i] != null) {
-            sum += employee[i].getSalary();
+    for (Employee value : employee) {
+        if (value != null) {
+            sum += value.getSalary();
         }
     }
     return sum;
 }
 
 public Employee findMinSalary(Employee[] employee){
-    int minSalary = 100000000;
+    double minSalary = 100000000;
     int j = 0;
     for (int i = 0; i < employee.length; i++) {
         if (employee[i] != null && employee[i].getSalary() < minSalary) {
@@ -24,7 +27,7 @@ public Employee findMinSalary(Employee[] employee){
 }
 
     public Employee findMaxSalary(Employee[] employee){
-        int maxSalary = 1;
+        double maxSalary = 1;
         int j = 0;
         for (int i= 0; i < employee.length; i++) {
             if (employee[i] != null && employee[i].getSalary() > maxSalary){
@@ -42,9 +45,45 @@ public Employee findMinSalary(Employee[] employee){
     }
 
     public void printNameEmployee(Employee[] employee) {
-        for (int i = 0; employee[i] != null && i < employee.length; i++) {
-            System.out.println(employee[i].getSurName() + " " + employee[i].getName() + " " + employee[i].getPatronymic());
+        for (Employee value : employee) {
+            if (value != null)
+                System.out.println(value.getSurName() + " " + value.getName() + " " + value.getPatronymic());
         }
     }
+    public void calculationIndexationSalary(Employee[] employee){
+    double salary;
+        for (Employee value : employee) {
+            if (value != null) {
+                salary = value.getSalary() * 1.05;       //Индесация ЗП на 5%
+                value.setSalary(salary);
+            }
+        }
+    }
+
+    /*public Arrays findNumDepartment(Employee[] employee) {
+        int[] num = new int[employee.length];
+        int j = 0;
+        int k = 0;
+        for (int i = 1; i < employee.length - 1; i++) {
+                if (employee[k].getDepartment() == i) {
+                    num[j] = employee[k].getDepartment();
+                    System.out.print("one: num[" + j + "] "+ num[j] + " ");
+                    j++;
+                    k++;
+                    break;
+
+                } else for (; k < employee.length - 1; k++) {
+                    if (employee[k].getDepartment() == i) {
+                        num[j] = employee[k].getDepartment();
+                        System.out.print("num[" + j + "] =" + num[j] + " ");
+                        j++;
+                        break;
+                    }
+                }
+
+        }
+        //System.out.println(Arrays.toString(num[]));
+        return num[];
+    }*/
 }
 
