@@ -80,7 +80,6 @@ public Employee findMinSalary(Employee[] employee){
                         break;
                     }
                 }
-
         }
         //System.out.println(Arrays.toString(num[]));
         return num[];
