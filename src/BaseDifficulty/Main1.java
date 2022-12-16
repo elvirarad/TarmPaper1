@@ -32,7 +32,8 @@ public class Main1 {
         for (Employee i : employee){
             System.out.println(i);
         }
-
         //System.out.println(" - номера отделов" + employeeService.findNumDepartment(employee));
+        //
+
     }
 }
